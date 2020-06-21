@@ -1,0 +1,14 @@
+on:
+  - pull_request
+  - push
+
+jobs:
+  awesome-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: jthegedus/github-action-awesome-lint@master
+        env:
+          AWESOME_LINT_VERSION: "0.13"
